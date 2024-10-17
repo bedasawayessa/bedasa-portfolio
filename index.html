@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedasa W. Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bedasa Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="profile">
+                <h2>Bedasa W.</h2>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#services"><i class="fas fa-cog"></i> Services</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
+            <footer>
+                <p>&copy; 2024 Bedasa W.</p>
+                <p>Developed by <a href="#">Bedasa W.</a></p>
+            </footer>
         </nav>
-    </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h1>About Me</h1>
-        <p>Hi, I'm Bedasa W., a passionate developer specializing in web and desktop applications using technologies like React, PHP, and JavaFX. I have a strong interest in solving real-world problems through technology and am constantly learning new tools and frameworks.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>React JS</li>
-            <li>PHP</li>
-            <li>JavaFX</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Job-Search App</h3>
-            <p>A job-search application built with React JS and PHP for job listings and company management.</p>
-            <a href="https://jobsfair.info" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Named Entity Recognition Research</h3>
-            <p>A research project on Named Entity Recognition (NER) models for financial documents using transfer learning approaches.</p>
-            <a href="https://github.com/bedasawayessa/ner-research" target="_blank">View Project</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach me at <a href="mailto:bedasa@example.com">bedasa@example.com</a>.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Bedasa W. All Rights Reserved.</p>
-    </footer>
+        <!-- Main Content -->
+        <section class="main-content" id="home">
+            <div class="hero">
+                <h1>Bedasa W.</h1>
+                <h3>I'm a Full Stack Developer</h3>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
