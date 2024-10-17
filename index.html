@@ -3,41 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedasa Portfolio</title>
+    <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <div class="profile">
-                <h2>Bedasa W.</h2>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <ul>
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                <li><a href="#services"><i class="fas fa-cog"></i> Services</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-            <footer>
-                <p>&copy; 2024 Bedasa W.</p>
-                <p>Developed by <a href="#">Bedasa W.</a></p>
-            </footer>
-        </nav>
+    <!-- Left Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- Main Content -->
-        <section class="main-content" id="home">
-            <div class="hero">
-                <h1>Bedasa W.</h1>
-                <h3>I'm a Full Stack Developer</h3>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <h1>Your Name</h1>
+            <p>Web Developer | Software Engineer</p>
+        </header>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate web developer focused on creating responsive and user-friendly websites.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of your project. <a href="#">Live Demo</a> | <a href="#">Source Code</a></p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of your project. <a href="#">Live Demo</a> | <a href="#">Source Code</a></p>
             </div>
         </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
