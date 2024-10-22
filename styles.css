@@ -53,16 +53,14 @@
 
 .carousel-slide {
     display: none;
-    position: relative;
-    text-align: center;
-    color: #fff;
-    padding: 50px;
 }
 
-.carousel-slide.active {
+.carousel-slide.active,
+.carousel-slide:first-child {
     display: block;
-    animation: fadeIn 0.5s ease-in-out;
 }
+
+
 
 .floating-image {
     position: absolute;
