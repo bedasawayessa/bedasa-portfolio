@@ -6,18 +6,19 @@ body {
     background-color: #f4f4f4;
 }
 
-.profile-icon {
+nav.sidebar .profile-icon {
     margin-bottom: 30px; /* Space below the profile icon */
     text-align: center; /* Center the icon */
 }
 
 nav.sidebar .profile-img {
-    width: 50px; /* Adjust the width of the icon */
-    height: 50px; /* Adjust the height of the icon */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid #fff; /* Optional: white border around the icon */
-    transition: transform 0.3s; /* Smooth scaling on hover */
+    width: 50px; /* Ensure this is correct */
+    height: 50px; /* Ensure this is correct */
+    border-radius: 50%; /* Ensure this is correct */
+    border: 2px solid #fff; /* Optional */
+    transition: transform 0.3s;
 }
+
 
 nav.sidebar .profile-img:hover {
     transform: scale(1.1); /* Slightly scale the icon on hover */
