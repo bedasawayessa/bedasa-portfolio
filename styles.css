@@ -6,7 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
-nav.sidebar .profile-icon {
+.profile-icon {
     margin-bottom: 30px; /* Space below the profile icon */
     text-align: center; /* Center the icon */
 }
