@@ -1,203 +1,142 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    color: #333;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-    background-color: #333;
-    color: #fff;
-    width: 200px;
-    position: fixed;
-    height: 100%;
-    padding-top: 20px;
+nav.sidebar {
+    width: 200px; /* Set the width of the sidebar */
+    background-color: #333; /* Dark background for sidebar */
+    color: #fff; /* White text color */
+    position: fixed; /* Fixed position */
+    height: 100%; /* Full height */
+    padding: 20px; /* Add padding */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 
-.sidebar ul {
-    list-style-type: none;
+nav.sidebar ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
 }
 
-.sidebar li {
-    padding: 15px 20px;
+nav.sidebar li {
+    margin: 15px 0; /* Add margin between list items */
 }
 
-.sidebar a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    transition: background 0.3s ease;
+nav.sidebar a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover */
 }
 
-.sidebar a:hover {
-    background-color: #575757;
+nav.sidebar a:hover {
+    color: #f4f4f4; /* Lighter color on hover */
 }
 
-/* Main Content */
 .main-content {
-    margin-left: 260px;
-    padding: 20px;
+    margin-left: 270px; /* Adjust margin for sidebar */
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* White background for main content */
+    min-height: 100vh; /* Full height */
 }
 
-/* Header Section with Carousel */
 header {
     position: relative;
-    height: 400px;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow */
+    margin-bottom: 20px; /* Space below header */
 }
 
 .carousel {
-    display: flex;
-    transition: transform 0.5s ease;
+    position: relative;
+    width: 100%; /* Full width */
+    height: 400px; /* Set height for carousel */
+    overflow: hidden; /* Hide overflow */
 }
 
 .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
+    position: absolute;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    opacity: 0; /* Hide all slides initially */
+    transition: opacity 0.5s ease; /* Fade effect */
 }
 
-.floating-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.carousel-slide img {
+    width: 100%; /* Full width of image */
+    height: 100%; /* Full height of image */
+    object-fit: cover; /* Cover image */
 }
 
 .carousel-text {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    bottom: 20px; /* Position text at the bottom */
+    left: 20px; /* Space from left */
+    color: #fff; /* White text color */
 }
 
-/* Section Styles */
 section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Light background for sections */
+    margin: 20px 0; /* Margin between sections */
+    padding: 20px; /* Padding inside sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
+    color: #333; /* Dark color for headings */
+    margin-bottom: 15px; /* Space below headings */
 }
 
-/* About Section */
-#about {
-    font-style: italic;
-}
-
-/* Projects Section */
 .project-card {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff; /* White background for project cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside cards */
+    margin-bottom: 15px; /* Space below cards */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
 .project-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
-/* Skills Section */
-#skills ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+form {
+    display: flex; /* Flexbox for form layout */
+    flex-direction: column; /* Column layout */
 }
 
-#skills li {
-    background-color: #e7e7e7;
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin: 5px;
+form input, form textarea {
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 10px; /* Space below fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
 }
 
-/* Contact Section */
-#contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+form button {
+    padding: 10px; /* Padding for button */
+    background-color: #333; /* Dark button background */
+    color: #fff; /* White button text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
-#contact-form {
-    width: 100%;
-    max-width: 500px;
+form button:hover {
+    background-color: #555; /* Lighter background on hover */
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-}
-
-input:focus, textarea:focus {
-    border-color: #666;
-}
-
-/* Button Styles */
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    text-align: center; /* Centered footer text */
+    padding: 20px 0; /* Padding for footer */
+    background-color: #333; /* Dark footer background */
+    color: #fff; /* White footer text */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        position: relative;
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-
-    header {
-        height: 300px;
-    }
-
-    .carousel-slide {
-        height: 300px;
-    }
+footer a {
+    color: #f4f4f4; /* Lighter link color */
+    text-decoration: none; /* Remove underline */
 }
