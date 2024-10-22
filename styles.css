@@ -6,6 +6,23 @@ body {
     background-color: #f4f4f4;
 }
 
+nav.sidebar .profile-icon {
+    margin-bottom: 30px; /* Space below the profile icon */
+    text-align: center; /* Center the icon */
+}
+
+nav.sidebar .profile-img {
+    width: 50px; /* Adjust the width of the icon */
+    height: 50px; /* Adjust the height of the icon */
+    border-radius: 50%; /* Make it circular */
+    border: 2px solid #fff; /* Optional: white border around the icon */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+nav.sidebar .profile-img:hover {
+    transform: scale(1.1); /* Slightly scale the icon on hover */
+}
+
 nav.sidebar {
     width: 200px; /* Set the width of the sidebar */
     background-color: #333; /* Dark background for sidebar */
@@ -14,6 +31,7 @@ nav.sidebar {
     height: 100%; /* Full height */
     padding: 20px; /* Add padding */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    text-align: center; /* Center the icon */
 }
 
 nav.sidebar ul {
@@ -34,15 +52,58 @@ nav.sidebar a {
 nav.sidebar a:hover {
     color: #f4f4f4; /* Lighter color on hover */
 }
+
+.main-content {
+    margin-left: 240px; /* Increased margin for more gap from the sidebar */
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* White background for main content */
+    min-height: 100vh; /* Full height */
+    transition: margin-left 0.3s; /* Smooth transition for margin */
+}
+
+
+header {
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+    margin-bottom: 20px; /* Space below header */
+}
+
+.carousel {
+    position: relative; /* Ensure carousel is relative for absolute positioning */
+    height: 400px; /* Set a fixed height for the carousel */
+}
+
+.carousel-slide {
+    position: absolute; /* Position slides absolutely for stacking */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0; /* Initially hide slides */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.carousel-slide img {
+    width: 100%; /* Full width of the carousel */
+    height: auto; /* Automatic height to maintain aspect ratio */
+    max-height: 100%; /* Prevent overflow of the container */
+    object-fit: fill; /* Show the full image without cropping */
+}
+
 .carousel-text {
-    position: absolute;
-    bottom: 20px; /* Position text at the bottom */
-    left: 20px; /* Space from the left */
+    position: absolute; /* Position the text absolutely within the slide */
+    top: 50%; /* Position it halfway down the slide */
+    left: 50%; /* Position it halfway across the slide */
+    transform: translate(-50%, -50%); /* Shift the text back by half its size to center it */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     color: #fff; /* White text color */
     padding: 10px; /* Padding around text */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect for text */
+    text-align: center; /* Center text alignment */
 }
 
 .carousel-text h1 {
@@ -53,48 +114,6 @@ nav.sidebar a:hover {
 .carousel-text p {
     font-size: 1.2rem; /* Font size for paragraph */
     margin: 5px 0 0; /* Space above paragraph */
-}
-
-
-.main-content {
-    margin-left: 270px; /* Adjust margin for sidebar */
-    padding: 20px; /* Add padding */
-    background-color: #fff; /* White background for main content */
-    min-height: 100vh; /* Full height */
-}
-
-header {
-    position: relative;
-    overflow: hidden; /* Hide overflow */
-    margin-bottom: 20px; /* Space below header */
-}
-
-.carousel {
-    position: relative;
-    width: 100%; /* Full width */
-    height: 400px; /* Set height for carousel */
-    overflow: hidden; /* Hide overflow */
-}
-
-.carousel-slide {
-    position: absolute;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    opacity: 0; /* Hide all slides initially */
-    transition: opacity 0.5s ease; /* Fade effect */
-}
-
-.carousel-slide img {
-    width: 100%; /* Full width of image */
-    height: 100%; /* Full height of image */
-    object-fit: cover; /* Cover image */
-}
-
-.carousel-text {
-    position: absolute;
-    bottom: 20px; /* Position text at the bottom */
-    left: 20px; /* Space from left */
-    color: #fff; /* White text color */
 }
 
 section {
@@ -122,6 +141,42 @@ h2 {
 .project-card:hover {
     transform: translateY(-3px); /* Lift effect on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.contact-info {
+    margin-top: 20px; /* Space above the contact info */
+    padding: 10px; /* Add padding */
+    background-color: #f9f9f9; /* Light background for the info box */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.contact-info h3 {
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.contact-details {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Space between items */
+}
+
+.contact-item {
+    flex: 1; /* Allow items to grow and fill available space */
+    min-width: 200px; /* Set a minimum width */
+}
+
+.contact-info p,
+.contact-info ul {
+    margin: 5px 0; /* Space between paragraphs and list */
+}
+
+.contact-info ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+.contact-info ul li {
+    margin: 5px 0; /* Space between list items */
 }
 
 form {
@@ -160,4 +215,51 @@ footer {
 footer a {
     color: #f4f4f4; /* Lighter link color */
     text-decoration: none; /* Remove underline */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav.sidebar {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Auto height for sidebar */
+        position: relative; /* Relative position */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove left margin for sidebar */
+    }
+
+    nav.sidebar ul li {
+        text-align: left; /* Align text to left on smaller screens */
+    }
+
+    .carousel {
+        height: 300px; /* Adjust carousel height for smaller screens */
+    }
+
+    .carousel-text h1 {
+        font-size: 1.5rem; /* Smaller font size for titles */
+    }
+
+    .carousel-text p {
+        font-size: 1rem; /* Smaller font size for paragraphs */
+    }
+
+    .contact-item {
+        flex: 1 1 100%; /* Allow items to take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 200px; /* Further adjust carousel height */
+    }
+
+    .carousel-text h1 {
+        font-size: 1.2rem; /* Smaller font size for titles */
+    }
+
+    .carousel-text p {
+        font-size: 0.9rem; /* Smaller font size for paragraphs */
+    }
 }
