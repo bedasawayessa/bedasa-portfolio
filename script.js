@@ -1,14 +1,20 @@
-document.querySelectorAll("nav ul li a").forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+const totalSlides = slides.length;
 
-    const targetSection = document.querySelector(this.getAttribute("href"));
-    window.scrollTo({
-      top: targetSection.offsetTop - 60, // Offset for header
-      behavior: "smooth",
-    });
-  });
-});
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
 
-// Update footer year dynamically
-document.getElementById("year").textContent = new Date().getFullYear();
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+
+function startCarousel() {
+  showSlide(currentSlide);
+  setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
+
+document.addEventListener("DOMContentLoaded", startCarousel);
