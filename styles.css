@@ -1,266 +1,328 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav.sidebar .profile-icon {
-    margin-bottom: 30px; /* Space below the profile icon */
-    text-align: center; /* Center the icon */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
 }
 
-nav.sidebar .profile-img {
-    width: 50px; /* Ensure this is correct */
-    height: 50px; /* Ensure this is correct */
-    border-radius: 50%; /* Ensure this is correct */
-    border: 2px solid #fff; /* Optional */
-    transition: transform 0.3s;
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #333;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
 }
 
-
-nav.sidebar .profile-img:hover {
-    transform: scale(1.1); /* Slightly scale the icon on hover */
+.skip-link:focus {
+    top: 0;
 }
 
+/* Sidebar Styles */
 nav.sidebar {
-    width: 200px; /* Set the width of the sidebar */
-    background-color: #333; /* Dark background for sidebar */
-    color: #fff; /* White text color */
-    position: fixed; /* Fixed position */
-    height: 100%; /* Full height */
-    padding: 20px; /* Add padding */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    text-align: center; /* Center the icon */
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 nav.sidebar ul {
-    list-style: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
+    list-style: none;
+    padding: 0;
 }
 
 nav.sidebar li {
-    margin: 15px 0; /* Add margin between list items */
+    margin: 15px 0;
 }
 
 nav.sidebar a {
-    color: #fff; /* White link color */
-    text-decoration: none; /* Remove underline from links */
-    transition: color 0.3s; /* Smooth transition for hover */
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 nav.sidebar a:hover {
-    color: #f4f4f4; /* Lighter color on hover */
+    color: #f4f4f4;
 }
 
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: transform 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content Styles */
 .main-content {
-    margin-left: 240px; /* Increased margin for more gap from the sidebar */
-    padding: 20px; /* Add padding */
-    background-color: #fff; /* White background for main content */
-    min-height: 100vh; /* Full height */
-    transition: margin-left 0.3s; /* Smooth transition for margin */
+    margin-left: 240px;
+    padding: 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    transition: margin-left 0.3s;
 }
 
-
-header {
-    position: relative;
-    overflow: hidden; /* Hide overflow */
-    margin-bottom: 20px; /* Space below header */
+body.dark-mode .main-content {
+    background-color: #444;
 }
 
+/* Carousel Styles */
 .carousel {
-    position: relative; /* Ensure carousel is relative for absolute positioning */
-    height: 400px; /* Set a fixed height for the carousel */
+    position: relative;
+    height: 400px;
+    overflow: hidden;
 }
 
 .carousel-slide {
-    position: absolute; /* Position slides absolutely for stacking */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex; /* Use flexbox to center the text */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    opacity: 0; /* Initially hide slides */
-    transition: opacity 0.5s ease; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
 }
 
 .carousel-slide img {
-    width: 100%; /* Full width of the carousel */
-    height: auto; /* Automatic height to maintain aspect ratio */
-    max-height: 100%; /* Prevent overflow of the container */
-    object-fit: fill; /* Show the full image without cropping */
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: fill;
 }
 
 .carousel-text {
-    position: absolute; /* Position the text absolutely within the slide */
-    top: 50%; /* Position it halfway down the slide */
-    left: 50%; /* Position it halfway across the slide */
-    transform: translate(-50%, -50%); /* Shift the text back by half its size to center it */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: #fff; /* White text color */
-    padding: 10px; /* Padding around text */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect for text */
-    text-align: center; /* Center text alignment */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .carousel-text h1 {
-    font-size: 2rem; /* Font size for title */
-    margin: 0; /* Remove default margin */
+    font-size: 2rem;
+    margin: 0;
 }
 
 .carousel-text p {
-    font-size: 1.2rem; /* Font size for paragraph */
-    margin: 5px 0 0; /* Space above paragraph */
+    font-size: 1.2rem;
+    margin: 5px 0 0;
 }
 
+/* Section Styles */
 section {
-    background-color: #f9f9f9; /* Light background for sections */
-    margin: 20px 0; /* Margin between sections */
-    padding: 20px; /* Padding inside sections */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode section {
+    background-color: #555;
 }
 
 h2 {
-    color: #333; /* Dark color for headings */
-    margin-bottom: 15px; /* Space below headings */
+    color: #333;
+    margin-bottom: 15px;
 }
 
+body.dark-mode h2 {
+    color: #fff;
+}
+
+/* Project Card Styles */
 .project-card {
-    background-color: #fff; /* White background for project cards */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside cards */
-    margin-bottom: 15px; /* Space below cards */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-3px); /* Lift effect on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.contact-info {
-    margin-top: 20px; /* Space above the contact info */
-    padding: 10px; /* Add padding */
-    background-color: #f9f9f9; /* Light background for the info box */
-    border-radius: 5px; /* Rounded corners */
-}
-
-.contact-info h3 {
-    margin-bottom: 10px; /* Space below the heading */
-}
-
-.contact-details {
-    display: flex; /* Use flexbox */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 20px; /* Space between items */
-}
-
-.contact-item {
-    flex: 1; /* Allow items to grow and fill available space */
-    min-width: 200px; /* Set a minimum width */
-}
-
-.contact-info p,
-.contact-info ul {
-    margin: 5px 0; /* Space between paragraphs and list */
-}
-
-.contact-info ul {
-    list-style-type: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
-}
-
-.contact-info ul li {
-    margin: 5px 0; /* Space between list items */
-}
-
+/* Contact Form Styles */
 form {
-    display: flex; /* Flexbox for form layout */
-    flex-direction: column; /* Column layout */
+    display: flex;
+    flex-direction: column;
 }
 
 form input, form textarea {
-    padding: 10px; /* Padding for input fields */
-    margin-bottom: 10px; /* Space below fields */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
-    padding: 10px; /* Padding for button */
-    background-color: #333; /* Dark button background */
-    color: #fff; /* White button text */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #555; /* Lighter background on hover */
+    background-color: #555;
 }
 
+/* Contact Info Styles */
+.contact-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.contact-info p, .contact-info ul {
+    margin: 5px 0;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin: 5px 0;
+}
+
+/* Footer Styles */
 footer {
-    text-align: center; /* Centered footer text */
-    padding: 20px 0; /* Padding for footer */
-    background-color: #333; /* Dark footer background */
-    color: #fff; /* White footer text */
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
 }
 
 footer a {
-    color: #f4f4f4; /* Lighter link color */
-    text-decoration: none; /* Remove underline */
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+
+/* Dark Mode Toggle */
+#theme-toggle {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #555;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav.sidebar {
-        width: 100%; /* Full width on smaller screens */
-        height: auto; /* Auto height for sidebar */
-        position: relative; /* Relative position */
+        width: 100%;
+        height: auto;
+        position: relative;
     }
 
     .main-content {
-        margin-left: 0; /* Remove left margin for sidebar */
-    }
-
-    nav.sidebar ul li {
-        text-align: left; /* Align text to left on smaller screens */
+        margin-left: 0;
     }
 
     .carousel {
-        height: 300px; /* Adjust carousel height for smaller screens */
+        height: 300px;
     }
 
     .carousel-text h1 {
-        font-size: 1.5rem; /* Smaller font size for titles */
+        font-size: 1.5rem;
     }
 
     .carousel-text p {
-        font-size: 1rem; /* Smaller font size for paragraphs */
-    }
-
-    .contact-item {
-        flex: 1 1 100%; /* Allow items to take full width */
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
-        height: 200px; /* Further adjust carousel height */
+        height: 200px;
     }
 
     .carousel-text h1 {
-        font-size: 1.2rem; /* Smaller font size for titles */
+        font-size: 1.2rem;
     }
 
     .carousel-text p {
-        font-size: 0.9rem; /* Smaller font size for paragraphs */
+        font-size: 0.9rem;
     }
 }
