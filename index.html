@@ -11,28 +11,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+
     <!-- Sidebar Navigation -->
-    <nav class="sidebar">
+    <nav class="sidebar" aria-label="Main Navigation">
         <ul>
             <li class="profile-icon">
-                <a href="#profile">
+                <a href="#profile" aria-label="Profile">
                     <img src="asset/Bedasa-Wayessa-1x15.jpg" alt="Profile Icon" class="profile-img">
                 </a>
             </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" aria-label="About">About</a></li>
+            <li><a href="#projects" aria-label="Projects">Projects</a></li>
+            <li><a href="#skills" aria-label="Skills">Skills</a></li>
+            <li><a href="#contact" aria-label="Contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content" id="main-content">
 
         <!-- Header Section with Carousel -->
         <header>
             <div class="carousel">
-                <div class="carousel-slide">
+                <div class="carousel-slide active">
                     <img src="asset/landing-image-1.jpg" alt="Image 1" class="floating-image">
                     <div class="carousel-text">
                         <h1>Bedasa Wayessa</h1>
@@ -40,14 +43,14 @@
                     </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="asset/bedasa-img-1.jpg" alt="Image 1" class="floating-image">
+                    <img src="asset/bedasa-img-1.jpg" alt="Image 2" class="floating-image">
                     <div class="carousel-text">
                         <h1>Bedasa Wayessa</h1>
                         <p>Web Developer | Software Engineer</p>
                     </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="asset/bedasa-img-3.jpg" alt="Image 2" class="floating-image">
+                    <img src="asset/bedasa-img-3.jpg" alt="Image 3" class="floating-image">
                     <div class="carousel-text">
                         <h1>Creating Responsive Web Applications</h1>
                         <p>Bringing ideas to life through code.</p>
@@ -55,10 +58,7 @@
                 </div>
             </div>
         </header>
-        
-        
 
-        <!-- About Section -->
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
@@ -68,7 +68,6 @@
                 <p>When I'm not coding, you can find me exploring new tech trends or engaging in community projects that promote digital literacy.</p>
             </div>
         </section>
-
 
         <!-- Projects Section -->
         <section id="projects">
@@ -96,14 +95,19 @@
             </ul>
         </section>
 
-
-         <!-- Contact Section -->
+        <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
             <form id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                
+                <label for="email">Your Email</label>
+                <input type="email" id="email" placeholder="Your Email" required>
+                
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                
                 <button type="submit">Send Message</button>
             </form>
 
@@ -113,33 +117,29 @@
                 <div class="contact-details">
                     <div class="contact-item">
                         <strong>Phone:</strong>
-                        <p>+251 935 736649</p> <!-- Replace with your phone number -->
+                        <p>+251 935 736649</p>
                     </div>
                     <div class="contact-item">
                         <strong>Email:</strong>
-                        <p><a href="mailto:bedasa.wayesa@gmail.com">bedasa.wayesa@gmail.com</a></p> <!-- Replace with your email -->
+                        <p><a href="mailto:bedasa.wayesa@gmail.com">bedasa.wayesa@gmail.com</a></p>
                     </div>
                     <div class="contact-item">
                         <strong>Social Links:</strong>
                         <ul>
                             <li><a href="https://github.com/bedasawayessa" target="_blank">GitHub</a></li>
                             <li><a href="https://www.linkedin.com/in/bedonaf/" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://x.com/Bedasa_Wayessa" target="_blank">Twitter</a></li> <!-- Add other social links -->
-                            <li><a href="https://www.youtube.com/@ABCPlusSkills" target="_blank">YouTube</a></li> <!-- Add other social links -->
-                            <li><a href="https://t.me/bedonaf" target="_blank"> Telegram </a></li> <!-- Add other social links -->
-                    
+                            <li><a href="https://x.com/Bedasa_Wayessa" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.youtube.com/@ABCPlusSkills" target="_blank">YouTube</a></li>
+                            <li><a href="https://t.me/bedonaf" target="_blank">Telegram</a></li>
                         </ul>
                     </div>
                     <div class="contact-item">
                         <strong>Company:</strong>
-                        <p>Your Company Name</p> <!-- Replace with your company name -->
-                         <p>Your Company Name</p> <!-- Replace with your company name -->
+                        <p>Your Company Name</p>
                     </div>
                 </div>
             </div>
         </section>
-
-
 
         <!-- Footer -->
         <footer>
@@ -147,6 +147,12 @@
             <p>Connect on <a href="https://github.com/bedasawayessa" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/bedonaf/" target="_blank">LinkedIn</a></p>
         </footer>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">↑</button>
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle">Toggle Dark Mode</button>
 
     <script src="script.js"></script>
 </body>
